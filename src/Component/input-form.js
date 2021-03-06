@@ -28,7 +28,7 @@ export default class inputForm extends Component {
 
   // Joi validation
   schema = {
-    cardNumber: Joi.number().required().label('Card number'),
+    cardNumber: Joi.string().required().label('Card number'),
     cardName: Joi.string().required().label('Card name'),
     cvv: Joi.number().required().label('cvv'),
   };
@@ -45,9 +45,12 @@ export default class inputForm extends Component {
 
     const { creditCard } = this.state;
     // checks card numbers length
+    var numbers = /^[0-9]+$/;
+    var str = creditCard.cardNumber.replace(/\s/g, ''); //remove white space
     if (creditCard.cardNumber.trim().length !== 19)
       errors.cardNumber = '"Card numbers" needs to be 16 digits';
-    else errors.cardNumber = '';
+    if (!str.match(numbers))
+      errors.cardNumber = '"Card number" must be a number';
 
     // validate card expiry date
     var currentTime = new Date();
