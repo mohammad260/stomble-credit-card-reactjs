@@ -1,0 +1,28 @@
+.flip-box-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+  z-index: 1111;
+}
+
+.flip-box .flip-box-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-box-front, .flip-box-back {
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flip-box-front {
+  transform: rotateY(180deg);
+}
+
+.flip-box-back {
+  color: white;
+  transform: rotateY(180deg);
+}

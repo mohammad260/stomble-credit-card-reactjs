@@ -1,0 +1,23 @@
+.transactionContainer {
+  width: 50vh;
+  height: 50vh;
+  background-color: #f3f3f3;
+}
+
+.transactionText {
+  width: 60%;
+  margin-left: 20%;
+  text-align: center;
+  position: relative;
+  top: 20%;
+}
+
+.top-2vh{
+  position: relative;
+  top: 2vh;
+  text-align: center;
+}
+
+.buttonMargin {
+  margin-top: 12%;
+}
